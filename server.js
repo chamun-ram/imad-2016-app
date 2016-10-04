@@ -15,7 +15,11 @@ app.get('/article-two',function(req,res){
 app.get('/article-three',function(req,res){
   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });
-
+var count=0;
+app.get('/counter', function(req,res){
+    count=count+1;
+    res.send(count.toString());
+});
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
